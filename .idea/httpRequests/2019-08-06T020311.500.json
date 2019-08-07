@@ -1,0 +1,7 @@
+{
+  "timestamp": "2019-08-06T06:03:11.949+0000",
+  "status": 500,
+  "error": "Internal Server Error",
+  "message": "Body parameter 0 was null",
+  "path": "/hi"
+}

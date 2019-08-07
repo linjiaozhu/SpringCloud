@@ -1,0 +1,26 @@
+#\u6240\u6709\u670D\u52A1\u90FD\u9700\u8981\u5411\u670D\u52A1\u4E2D\u5FC3Eureka\u8FDB\u884C\u6CE8\u518C
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8080/eureka/
+#\u8BBE\u7F6E\u7AEF\u53E3\u53F7
+server:
+  port: 8086
+#\u670D\u52A1\u540D\u79F0
+spring:
+  application:
+    name: service-zuul
+#\u914D\u7F6Ezuul\u8DEF\u7531
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      #\u670D\u52A1\u540D\u79F0
+      serviceId: service-ribbon
+    api-b:
+      path: /api-b/**
+      serviceId: service-feign
+
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
